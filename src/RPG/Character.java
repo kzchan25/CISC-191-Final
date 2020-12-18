@@ -1,9 +1,4 @@
 package RPG;
-
-//Kai Chan
-//Base Character class, is used for the player, parent class of the enemy character
-//calculates and stores data used by the character (except for the move data, that's in MoveList)
-
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
@@ -76,6 +71,10 @@ public class Character {
 
 	public String getStatus() {
 		return status;
+	}
+	
+	public int getSpeed() {
+		return speed + (status.equals("speed") ? 1 : 0) * statusStrength;
 	}
 
 	public int getMaxHealth() {

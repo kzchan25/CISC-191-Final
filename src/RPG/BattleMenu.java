@@ -1,8 +1,5 @@
 package RPG;
 
-//Ryan Cervantes
-//Draws the Battle Menu, takes the input from the mouse, decides which button was pressed, and passes that onto the Battle Controller
-
 public class BattleMenu implements Menu {
 	
 	private static MenuButton[] buttons;
@@ -10,7 +7,7 @@ public class BattleMenu implements Menu {
 	private static String[] options = {"attack", "poison", "shield", "heal", "pause"};
 	private static final int NUM_OPTIONS = 4;
 	
-	//makes 5 buttons, the ones in options[] and pause(done seperately because its in another corner)
+	//makes 5 buttons, the ones in options[] and pause(done seperately because its in another corner
 	public BattleMenu() {
 		int headerHeight = ViewMenu.applet.height * 1 / 10;
 		int interfaceHeight = ViewMenu.applet.height - headerHeight;

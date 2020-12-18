@@ -1,6 +1,5 @@
 package RPG;
 
-//Tram Huynh
 //container for the red, green, and blue components of a color. 
 public class Color {
 	public int r;

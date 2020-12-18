@@ -1,14 +1,12 @@
 package RPG;
 
-//Tram Huynh
-//Encodes and Decodes game data into JSON format and either reads or writes the data to a json file
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,7 +26,6 @@ public class DataIO {
 			while (file.hasNextLine()) {
 				text += file.nextLine();
 			}
-			file.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

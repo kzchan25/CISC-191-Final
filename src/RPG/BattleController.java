@@ -1,8 +1,5 @@
 package RPG;
 
-//Kai Chan
-//Main Gameplay loop, houses player and enemy objects and manipulates them. Coordinates with the battle view as well
-
 public class BattleController {
 	public static Character player;
 	public static EnemyCharacter currentEnemy;

@@ -1,8 +1,6 @@
 package RPG;
 import java.util.ArrayList;
 
-//Kai Chan, draws all the stuff that is unique to the battle, this includes health, turn number, sprites for characters, and any splash text
-
 public class BattleView {
 	
 	private static Animation enemyIdle;
@@ -29,15 +27,13 @@ public class BattleView {
 	//displays health, turn, enemies defeated
 	public static void showBasicInfo() {
 		ViewMenu.applet.strokeWeight(0);
-		ViewMenu.applet.fill(ViewMenu.white.r, ViewMenu.white.g, ViewMenu.white.b); //turn color selected to white
-		ViewMenu.applet.rect(ViewMenu.applet.width / 5, ViewMenu.applet.height * 1 / 10, ViewMenu.applet.width * 13 / 20, ViewMenu.applet.height * 1 / 10); //draws rectangle for health values
-		ViewMenu.applet.fill(ViewMenu.dark.r, ViewMenu.dark.g, ViewMenu.dark.b); //turn color selected to black
-		//display "health", turn number, and enemies defeated
+		ViewMenu.applet.fill(ViewMenu.white.r, ViewMenu.white.g, ViewMenu.white.b);
+		ViewMenu.applet.rect(ViewMenu.applet.width / 5, ViewMenu.applet.height * 1 / 10, ViewMenu.applet.width * 13 / 20, ViewMenu.applet.height * 1 / 10);
+		ViewMenu.applet.fill(ViewMenu.dark.r, ViewMenu.dark.g, ViewMenu.dark.b);
 		ViewMenu.applet.text("Health", ViewMenu.applet.width / 5 + 5, ViewMenu.applet.height * 1 / 10 * 15 / 12);
 		ViewMenu.applet.text("TURN: " + BattleController.getTurnsPassed(), ViewMenu.applet.width / 2, ViewMenu.applet.height * 9 / 10);
 		ViewMenu.applet.text("ENEMIES DEFEATED: " + BattleController.getEnemiesDefeated(), ViewMenu.applet.width * 7 / 10, ViewMenu.applet.height * 9 / 10);
 		ViewMenu.applet.text("Health", ViewMenu.applet.width * 4 / 5, ViewMenu.applet.height * 1 / 10 * 15 / 12);
-		//get health and display it
 		ViewMenu.applet.text(BattleController.player.getHealth(), ViewMenu.applet.width / 5 + 5, ViewMenu.applet.height * 2 / 10);
 		ViewMenu.applet.text(BattleController.currentEnemy.getHealth(), ViewMenu.applet.width * 4 / 5, ViewMenu.applet.height * 2 / 10);
 		ViewMenu.applet.strokeWeight(4);

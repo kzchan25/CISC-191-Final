@@ -1,8 +1,5 @@
 package RPG;
 
-//Tram Huynh
-//takes an array of images and displays them at a given x and y value. can also invert images, cycles > 1 indicates priority over other animations.
-
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -12,7 +9,6 @@ public class Animation {
 	private int frameCount = 0;
 	private int totalFrames;
 	private int cycles = 0;
-	private final int FRAME_LENGTH = 4;
 	//takes the path from the directory to fill images array
 	public Animation(String imageName, int totalFrames) {
 		images = new PImage[totalFrames];
@@ -29,13 +25,13 @@ public class Animation {
 		if (inverted) {
 			ViewMenu.applet.pushMatrix();
 			ViewMenu.applet.scale(-1, 1);
-			int width = images[frameCount / ((totalFrames * FRAME_LENGTH - 1) / totalFrames)].width * 3 / 4; //constants used here for scaling the image after the flip, rotation matrices are funky
-			int height = images[frameCount / ((totalFrames * FRAME_LENGTH - 1) / totalFrames)].height * 3 / 4;
-			ViewMenu.applet.image(images[frameCount / ((totalFrames * FRAME_LENGTH - 1) / totalFrames)] , -x, y , width, height);
+			int width = images[frameCount / ((totalFrames * 4 - 1) / totalFrames)].width * 3 / 4;
+			int height = images[frameCount / ((totalFrames * 4 - 1) / totalFrames)].height * 3 / 4;
+			ViewMenu.applet.image(images[frameCount / ((totalFrames * 4 - 1) / totalFrames)] , -x, y , width, height);
 			ViewMenu.applet.popMatrix();
 		}
 		else {
-			applet.image(images[frameCount / ((totalFrames * FRAME_LENGTH - 1) / totalFrames)], x, y);
+			applet.image(images[frameCount / ((totalFrames * 4 - 1) / totalFrames)], x, y);
 		}
 		if (frameCount == totalFrames * 3 - 1) {
 			frameCount = 0;
